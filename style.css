@@ -11,7 +11,6 @@ body {
 
 h1{
     text-decoration: underline;
-    margin-top: 2rem;
 }
 
 main{
@@ -22,26 +21,26 @@ main{
 }
 
 .game_container{
-    height: 70vh;
+    height: 55vh;
     display: flex;
     justify-content: center;
     align-items: center;
 } 
 
 .game{
-    height: 60vmin;
-    width: 60vmin;
+    height: 55vmin;
+    width: 55vmin;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 1.5vmin;
+    gap: 1.8vmin;
     border: 6px solid #fff;
 }
 
 .box {
-    height: 18vmin;
-    width: 18vmin;
+    height: 15vmin;
+    width: 15vmin;
     border: none;
     background-color: #3d3d3d;
     font-size: 8vmin;
@@ -59,4 +58,53 @@ main{
 
 #reset-btn:hover{
     background-color: #d9d8d8;
+}
+#new-btn{ 
+    padding: 1rem;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#new-btn:hover{
+    background-color: #d9d8d8;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+}
+
+.points {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.chance {
+    margin-top: 1.5rem;
+    font-size: 2rem;
+}
+
+#o {
+    font-weight: 1000;
+    font-size: 1.5rem;
+    color: red;
+}
+
+#x {
+    font-weight: 1000;
+    font-size: 1.5rem;
+    color: red;
+}
+
+.result {
+    font-size: 2rem;
+    font-weight: 700;
+    color: red;
+    margin-bottom: 1.5rem;
 }
