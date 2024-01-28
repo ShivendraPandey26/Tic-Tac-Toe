@@ -22,7 +22,6 @@ const winnerPatterns = [
   [6, 7, 8],
 ];
 
-
 boxs.forEach((box) => {
   box.addEventListener("click", () => {
     // console.log("clicked");
@@ -43,9 +42,18 @@ boxs.forEach((box) => {
 
     box.disabled = true;
 
-    checkWinner();
+    let isWinner = checkWinner();
+
+    if (counter === 10 && !isWinner) {
+      gameDraw();
+    }
   });
 });
+
+const gameDraw = () => {
+  result.innerHTML = "Game was a Draw.";
+  disabledBoxs();
+};
 
 const disabledBoxs = () => {
   boxs.forEach((box) => {
@@ -55,7 +63,7 @@ const disabledBoxs = () => {
 };
 
 const addpoints = (points) => {
-//   console.log(points);
+  //   console.log(points);
   if (points === "O") {
     pointsO += 1;
     valueO.innerHTML = pointsO;
@@ -68,9 +76,8 @@ const addpoints = (points) => {
 };
 
 const winnerResult = (winner) => {
-  result.innerHTML = `winner ${winner}`;
+  result.innerHTML = `winner is ${winner}`;
   disabledBoxs();
-
   addpoints(winner);
 };
 
@@ -87,8 +94,7 @@ const checkWinner = () => {
     if (pos1value != "" && pos2value != "" && pos3value != "") {
       if (pos1value === pos2value && pos2value === pos3value) {
         winnerResult(pos1value);
-      } else if (counter === 10) {
-        result.innerHTML = "Draw";
+        return true;
       }
     }
   }
